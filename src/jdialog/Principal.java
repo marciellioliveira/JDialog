@@ -5,20 +5,25 @@
  */
 package jdialog;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Marcielli
  */
 public class Principal extends javax.swing.JFrame {
+    
+    
 
-    /**
-     * Creates new form Principal
-     */
     public Principal() {
         initComponents();
         
         setExtendedState(MAXIMIZED_BOTH);
+        
+        
     }
+    
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -111,21 +116,29 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonNaoQueroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNaoQueroActionPerformed
-        JDialogCustomizacao cst = new JDialogCustomizacao();
-        cst.dialogBotaoNaoQueroVaga();
-        
+         Mensagem m = new Mensagem();
+         m.setVisible(true);
+         JDialogCustomizacao cst = new JDialogCustomizacao();
+         cst.dialogBotaoNaoQueroVaga();
     }//GEN-LAST:event_jButtonNaoQueroActionPerformed
 
     private void jButtonQueroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQueroActionPerformed
-        JDialogCustomizacao cst = new JDialogCustomizacao();
-        cst.dialogBotaoQueroVaga();
+         Mensagem m = new Mensagem();
+         m.setVisible(true);
+         JDialogCustomizacao cst = new JDialogCustomizacao();
+         cst.dialogBotaoQueroVaga();
     }//GEN-LAST:event_jButtonQueroActionPerformed
 
     private void jButtonDivulgarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivulgarActionPerformed
-       JDialogCustomizacao cst = new JDialogCustomizacao();
-       cst.dialogBotaoDivulgaVaga();
+         Mensagem m = new Mensagem();
+         m.setVisible(true);
+         JDialogCustomizacao cst = new JDialogCustomizacao();
+         cst.dialogBotaoDivulgaVaga();
     }//GEN-LAST:event_jButtonDivulgarActionPerformed
 
+ 
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -168,4 +181,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelBg;
     // End of variables declaration//GEN-END:variables
+
+   
 }

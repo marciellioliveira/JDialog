@@ -3,15 +3,16 @@ package jdialog;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Locale;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -19,7 +20,8 @@ import javax.swing.JPanel;
  *
  * @author Marcielli
  */
-public class JDialogCustomizacao implements ActionListener{
+public class JDialogCustomizacao extends JFrame implements ActionListener{
+    
     
     final JDialog dialog = new JDialog();
     JPanel panel = new JPanel();
@@ -27,8 +29,6 @@ public class JDialogCustomizacao implements ActionListener{
     JButton buttonDivulgar = new JButton();
     JButton buttonQuero = new JButton();
     JButton buttonNaoQuero = new JButton();
-    
-   
     
     public JDialogCustomizacao() {
     
@@ -39,8 +39,6 @@ public class JDialogCustomizacao implements ActionListener{
     }
     
     public void dialogBotaoDivulgaVaga() {
-        
-        
         dialog.add(panel);
         
         dialog.setSize(350, 200);
@@ -50,7 +48,6 @@ public class JDialogCustomizacao implements ActionListener{
         final int y = (tamanhoTela.height - dialog.getHeight())/2;
         dialog.setLocation(x, y);
         
-        dialog.setVisible(false);
         dialog.setUndecorated(true);
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
@@ -86,7 +83,7 @@ public class JDialogCustomizacao implements ActionListener{
         final int y = (tamanhoTela.height - dialog.getHeight())/2;
         dialog.setLocation(x, y);
         
-        dialog.setVisible(false);
+        
         dialog.setUndecorated(true);
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
@@ -122,7 +119,7 @@ public class JDialogCustomizacao implements ActionListener{
         final int y = (tamanhoTela.height - dialog.getHeight())/2;
         dialog.setLocation(x, y);
         
-        dialog.setVisible(false);
+        
         dialog.setUndecorated(true);
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
@@ -145,18 +142,19 @@ public class JDialogCustomizacao implements ActionListener{
        buttonNaoQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));
        
     }
+    
+    
   
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if((e.getSource() == buttonDivulgar) || (e.getSource() == buttonQuero) || (e.getSource() == buttonNaoQuero)){
-                  
+            
+            
             dialog.setVisible(false);
+            
             
         } 
     }
-    
-   
-    
-    
 }
