@@ -73,7 +73,7 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         
         panel.setBackground(Color.WHITE);
         panel.setBorder(BorderFactory.createLineBorder(new Color(37, 45, 132), 2));        
-        panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/btnDivulgar.png"))));
+        panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/divulgarvaga.png"))));
         panel.add(combo);
         
         combo.setBackground(new Color(37, 45, 132));
@@ -107,13 +107,13 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         
         panel.setBackground(Color.WHITE);
         panel.setBorder(BorderFactory.createLineBorder(new Color(68, 154, 64), 2));
-        panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/btnQuero.png"))));
-        panel.add(labelConfirma);
-        labelConfirma.setText("Quer mesmo?");
+        panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/quermesmo.png"))));
+       // panel.add(labelConfirma);
+       // labelConfirma.setText("Quer mesmo?");
         labelConfirma.setForeground(new Color(68, 154, 64));
        
         panel.add(buttonQuero);
-        buttonQuero.setText("Quero");
+        buttonQuero.setText("Eu Quero essa vaga");
         buttonQuero.setBackground(new Color(68, 154, 64));
         buttonQuero.setForeground(Color.WHITE);
         buttonQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -138,13 +138,13 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         
         panel.setBackground(Color.WHITE);
         panel.setBorder(BorderFactory.createLineBorder(new Color(162, 25, 26), 2));
-        panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/btnNaoQuero.png"))));
-        panel.add(labelConfirma);
-        labelConfirma.setText("Não quer mesmo?");
+        panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/naoquermesmo.png"))));
+       // panel.add(labelConfirma);
+        //labelConfirma.setText("Não quer mesmo?");
         labelConfirma.setForeground(new Color(162, 25, 26));
 
         panel.add(buttonNaoQuero);
-        buttonNaoQuero.setText("Não Quero");
+        buttonNaoQuero.setText("Eu não Quero essa vaga");
         buttonNaoQuero.setBackground(new Color(162, 25, 26));
         buttonNaoQuero.setForeground(Color.WHITE);
         buttonNaoQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));       
