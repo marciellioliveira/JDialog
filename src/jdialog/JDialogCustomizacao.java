@@ -29,8 +29,12 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
     JButton buttonDivulgar = new JButton();
     JButton buttonQuero = new JButton();
     JButton buttonNaoQuero = new JButton();
-    boolean t;
-    
+    JButton buttonFechar = new JButton();
+    JLabel labelConfirma = new JLabel();
+    JLabel labelNaoQueroObservacao = new JLabel();
+    JLabel labelQueroObservacao = new JLabel();
+    JLabel labelDivulgarObservacao = new JLabel();
+     
     public JDialogCustomizacao() {
     
         buttonDivulgar.addActionListener(this);
@@ -50,7 +54,6 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         panel.setBackground(Color.white);
         
         frame.setVisible(true);
-      
     }
     
     
@@ -79,11 +82,11 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         combo.addItem("Feed de Amigos");
         combo.addItem("Feed de Grupos");
         
-       panel.add(buttonDivulgar);
-       buttonDivulgar.setText("Divulgar");
-       buttonDivulgar.setBackground(new Color(37, 45, 132));
-       buttonDivulgar.setForeground(Color.WHITE);
-       buttonDivulgar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        panel.add(buttonDivulgar);
+        buttonDivulgar.setText("Divulgar");
+        buttonDivulgar.setBackground(new Color(37, 45, 132));
+        buttonDivulgar.setForeground(Color.WHITE);
+        buttonDivulgar.setCursor(new Cursor(Cursor.HAND_CURSOR));
        
     }
     
@@ -105,19 +108,15 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         panel.setBackground(Color.WHITE);
         panel.setBorder(BorderFactory.createLineBorder(new Color(68, 154, 64), 2));
         panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/btnQuero.png"))));
-        panel.add(combo);
-        
-        combo.setBackground(new Color(68, 154, 64));
+        panel.add(labelConfirma);
+        labelConfirma.setText("Quer mesmo?");
+        labelConfirma.setForeground(new Color(68, 154, 64));
        
-        combo.addItem("Compartilhar");
-        combo.addItem("Feed de Amigos");
-        combo.addItem("Feed de Grupos");
-        
-       panel.add(buttonQuero);
-       buttonQuero.setText("Quero");
-       buttonQuero.setBackground(new Color(68, 154, 64));
-       buttonQuero.setForeground(Color.WHITE);
-       buttonQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        panel.add(buttonQuero);
+        buttonQuero.setText("Quero");
+        buttonQuero.setBackground(new Color(68, 154, 64));
+        buttonQuero.setForeground(Color.WHITE);
+        buttonQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));
        
     }
     
@@ -140,19 +139,15 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         panel.setBackground(Color.WHITE);
         panel.setBorder(BorderFactory.createLineBorder(new Color(162, 25, 26), 2));
         panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/btnNaoQuero.png"))));
-        panel.add(combo);
-        
-        combo.setBackground(new Color(162, 25, 26));
-       
-        combo.addItem("Compartilhar");
-        combo.addItem("Feed de Amigos");
-        combo.addItem("Feed de Grupos");
-        
-       panel.add(buttonNaoQuero);
-       buttonNaoQuero.setText("Não Quero");
-       buttonNaoQuero.setBackground(new Color(162, 25, 26));
-       buttonNaoQuero.setForeground(Color.WHITE);
-       buttonNaoQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));       
+        panel.add(labelConfirma);
+        labelConfirma.setText("Não quer mesmo?");
+        labelConfirma.setForeground(new Color(162, 25, 26));
+
+        panel.add(buttonNaoQuero);
+        buttonNaoQuero.setText("Não Quero");
+        buttonNaoQuero.setBackground(new Color(162, 25, 26));
+        buttonNaoQuero.setForeground(Color.WHITE);
+        buttonNaoQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));       
     }
     
     @Override
