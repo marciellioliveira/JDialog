@@ -74,6 +74,8 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         panel.setBackground(Color.WHITE);
         panel.setBorder(BorderFactory.createLineBorder(new Color(37, 45, 132), 2));        
         panel.add(new JLabel(new ImageIcon(getClass().getResource("/jdialog/divulgarvaga.png"))));
+        
+               
         panel.add(combo);
         
         combo.setBackground(new Color(37, 45, 132));
@@ -81,6 +83,7 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         combo.addItem("Compartilhar");
         combo.addItem("Feed de Amigos");
         combo.addItem("Feed de Grupos");
+        
         
         panel.add(buttonDivulgar);
         buttonDivulgar.setText("Divulgar");
@@ -112,8 +115,13 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
        // labelConfirma.setText("Quer mesmo?");
         labelConfirma.setForeground(new Color(68, 154, 64));
        
+        panel.add(buttonNaoQuero);
         panel.add(buttonQuero);
-        buttonQuero.setText("Eu Quero essa vaga");
+        buttonNaoQuero.setText("Eu não Quero essa vaga");
+        buttonNaoQuero.setBackground(new Color(162, 25, 26));
+        buttonNaoQuero.setForeground(Color.WHITE);
+        buttonNaoQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));   
+        buttonQuero.setText("Eu quero essa vaga");
         buttonQuero.setBackground(new Color(68, 154, 64));
         buttonQuero.setForeground(Color.WHITE);
         buttonQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -144,7 +152,12 @@ public class JDialogCustomizacao extends JDialog implements ActionListener{
         labelConfirma.setForeground(new Color(162, 25, 26));
 
         panel.add(buttonNaoQuero);
+        panel.add(buttonQuero);
         buttonNaoQuero.setText("Eu não Quero essa vaga");
+        buttonQuero.setBackground(new Color(68, 154, 64));
+        buttonQuero.setForeground(Color.WHITE);
+        buttonQuero.setText("Eu quero essa vaga");
+        buttonQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));  
         buttonNaoQuero.setBackground(new Color(162, 25, 26));
         buttonNaoQuero.setForeground(Color.WHITE);
         buttonNaoQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));       
