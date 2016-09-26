@@ -5,20 +5,23 @@
  */
 package jdialog;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
  *
  * @author Marcielli
  */
-public class Principal extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame implements ActionListener{
     
-    
+    public int teste;
 
     public Principal() {
         initComponents();
         
         setExtendedState(MAXIMIZED_BOTH);
+        
         
         
     }
@@ -43,7 +46,7 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        jPanelBg.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelBg.setBackground(new java.awt.Color(51, 51, 255));
 
         jButtonNaoQuero.setText("Não Quero");
         jButtonNaoQuero.addActionListener(new java.awt.event.ActionListener() {
@@ -97,16 +100,16 @@ public class Principal extends javax.swing.JFrame {
         jPanelBgLayout.setHorizontalGroup(
             jPanelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBgLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(20, 20, 20)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+                .addGap(26, 26, 26))
         );
         jPanelBgLayout.setVerticalGroup(
             jPanelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBgLayout.createSequentialGroup()
-                .addGap(122, 122, 122)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBgLayout.createSequentialGroup()
+                .addContainerGap(244, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanelBg, "card2");
@@ -116,27 +119,27 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonNaoQueroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNaoQueroActionPerformed
-         Mensagem m = new Mensagem();
-         m.setVisible(true);
-         JDialogCustomizacao cst = new JDialogCustomizacao();
-         cst.dialogBotaoNaoQueroVaga();
+    JDialogCustomizacao t = new  JDialogCustomizacao();
+    t.frame();
+    t.dialogBotaoNaoQueroVaga();
+           
     }//GEN-LAST:event_jButtonNaoQueroActionPerformed
 
     private void jButtonQueroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQueroActionPerformed
-         Mensagem m = new Mensagem();
-         m.setVisible(true);
-         JDialogCustomizacao cst = new JDialogCustomizacao();
-         cst.dialogBotaoQueroVaga();
+         JDialogCustomizacao t = new  JDialogCustomizacao();
+         t.frame();
+         t.dialogBotaoQueroVaga();
     }//GEN-LAST:event_jButtonQueroActionPerformed
 
     private void jButtonDivulgarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivulgarActionPerformed
-         Mensagem m = new Mensagem();
-         m.setVisible(true);
-         JDialogCustomizacao cst = new JDialogCustomizacao();
-         cst.dialogBotaoDivulgaVaga();
+         JDialogCustomizacao t = new  JDialogCustomizacao();
+         t.frame();
+         t.dialogBotaoDivulgaVaga();
     }//GEN-LAST:event_jButtonDivulgarActionPerformed
-
  
+ 
+  
+   
     
     
     /**
@@ -181,6 +184,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelBg;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Mensagem m = new Mensagem();
+        m.setVisible(true);
+        m.btnNaoQuero();
+    }
 
    
 }

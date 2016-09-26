@@ -3,7 +3,6 @@ package jdialog;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,23 +19,40 @@ import javax.swing.JPanel;
  *
  * @author Marcielli
  */
-public class JDialogCustomizacao extends JFrame implements ActionListener{
+public class JDialogCustomizacao extends JDialog implements ActionListener{
     
     
     final JDialog dialog = new JDialog();
+    final JFrame frame = new JFrame();
     JPanel panel = new JPanel();
     JComboBox combo = new JComboBox();
     JButton buttonDivulgar = new JButton();
     JButton buttonQuero = new JButton();
     JButton buttonNaoQuero = new JButton();
+    boolean t;
     
     public JDialogCustomizacao() {
     
         buttonDivulgar.addActionListener(this);
         buttonNaoQuero.addActionListener(this);
-        buttonQuero.addActionListener(this);
-        
+        buttonQuero.addActionListener(this);        
     }
+    
+    public void frame() {
+     
+        Dimension DimMax = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setMaximumSize(DimMax);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.setUndecorated(true);
+        frame.setOpacity(0.5F);
+        
+        frame.add(panel);
+        panel.setBackground(Color.white);
+        
+        frame.setVisible(true);
+      
+    }
+    
     
     public void dialogBotaoDivulgaVaga() {
         dialog.add(panel);
@@ -73,7 +89,6 @@ public class JDialogCustomizacao extends JFrame implements ActionListener{
     
     public void dialogBotaoQueroVaga() {
         
-        
         dialog.add(panel);
         
         dialog.setSize(350, 200);
@@ -82,7 +97,6 @@ public class JDialogCustomizacao extends JFrame implements ActionListener{
         final int x = (tamanhoTela.width - dialog.getWidth())/2;
         final int y = (tamanhoTela.height - dialog.getHeight())/2;
         dialog.setLocation(x, y);
-        
         
         dialog.setUndecorated(true);
         dialog.setAlwaysOnTop(true);
@@ -100,7 +114,7 @@ public class JDialogCustomizacao extends JFrame implements ActionListener{
         combo.addItem("Feed de Grupos");
         
        panel.add(buttonQuero);
-       buttonQuero.setText("Divulgar");
+       buttonQuero.setText("Quero");
        buttonQuero.setBackground(new Color(68, 154, 64));
        buttonQuero.setForeground(Color.WHITE);
        buttonQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -108,7 +122,6 @@ public class JDialogCustomizacao extends JFrame implements ActionListener{
     }
     
     public void dialogBotaoNaoQueroVaga() {
-        
         
         dialog.add(panel);
         
@@ -136,25 +149,19 @@ public class JDialogCustomizacao extends JFrame implements ActionListener{
         combo.addItem("Feed de Grupos");
         
        panel.add(buttonNaoQuero);
-       buttonNaoQuero.setText("Divulgar");
+       buttonNaoQuero.setText("Não Quero");
        buttonNaoQuero.setBackground(new Color(162, 25, 26));
        buttonNaoQuero.setForeground(Color.WHITE);
-       buttonNaoQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));
-       
+       buttonNaoQuero.setCursor(new Cursor(Cursor.HAND_CURSOR));       
     }
     
-    
-  
-    
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if((e.getSource() == buttonDivulgar) || (e.getSource() == buttonQuero) || (e.getSource() == buttonNaoQuero)){
             
-            
             dialog.setVisible(false);
+            frame.setVisible(false);
             
-            
-        } 
+        }
     }
 }

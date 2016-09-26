@@ -5,6 +5,8 @@
  */
 package jdialog;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author Marcielli
@@ -18,6 +20,15 @@ public class Mensagem extends javax.swing.JFrame {
         initComponents();
         
         frameTransparente();
+        
+       
+        
+        
+//        try {
+//            nq.setSelected(true);
+//            nq.setMaximizable(true);
+//            nq.setMaximum(true);
+//        } catch (java.beans.PropertyVetoException e) {}
     }
     
     public void frameTransparente () {
@@ -26,7 +37,7 @@ public class Mensagem extends javax.swing.JFrame {
         setOpacity(0.5F);
         setExtendedState(MAXIMIZED_BOTH);
     }
-    
+  
    
   
 
@@ -39,13 +50,48 @@ public class Mensagem extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDesktopPaneBg = new javax.swing.JDesktopPane();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
+
+        jDesktopPaneBg.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jDesktopPaneBgAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        getContentPane().add(jDesktopPaneBg);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jDesktopPaneBgAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jDesktopPaneBgAncestorAdded
+        
+        
+    }//GEN-LAST:event_jDesktopPaneBgAncestorAdded
+
+    public void btnNaoQuero() {
+        NaoQuero nq = new NaoQuero();
+        jDesktopPaneBg.add(nq);
+        nq.setVisible(true);
+        
+        
+        
+        
+//        try {
+//            nq.setSelected(true);
+//            nq.setMaximizable(true);
+//            nq.setMaximum(true);
+//        } catch (java.beans.PropertyVetoException e) {}
+    }
+   
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -82,5 +128,6 @@ public class Mensagem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPaneBg;
     // End of variables declaration//GEN-END:variables
 }
