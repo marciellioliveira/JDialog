@@ -46,7 +46,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        jPanelBg.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelBg.setBackground(new java.awt.Color(0, 153, 153));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
